@@ -22,18 +22,18 @@ public class MarkdownParse {
             // System.out.println(nextOpenBracket);
             // System.out.println(nextCloseBracket);
 
-            if (nextOpenBracket != 0) {
-                if (markdown.substring(nextOpenBracket - 1, nextOpenBracket).equals("!")) {
-                    break;
-                }
-            }
+            // if (nextOpenBracket != 0) {
+            // if (markdown.substring(nextOpenBracket - 1, nextOpenBracket).equals("!")) {
+            // break;
+            // }
+            // }
             int openParen = markdown.indexOf("(", nextCloseBracket);
             int closeParen = markdown.indexOf(")", openParen);
             // System.out.println(openParen);
             // System.out.println(closeParen);
-            if (openParen < 0 || closeParen < 0) {
-                break;
-            }
+            // if (openParen < 0 || closeParen < 0) {
+            // break;
+            // }
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
         }

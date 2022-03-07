@@ -10,7 +10,7 @@ public class MarkdownParse {
         ArrayList<String> toReturn = new ArrayList<>();
         int currentIndex = 0;
         while (currentIndex < markdown.length()) {
-            System.out.println(currentIndex);
+            // System.out.println(currentIndex);
             int nextOpenBracket = markdown.indexOf("[", currentIndex);
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
             if (nextOpenBracket < 0 || nextCloseBracket < 0) {
@@ -25,9 +25,9 @@ public class MarkdownParse {
             int openParen = markdown.indexOf("(", nextCloseBracket);
             int closeParen = markdown.indexOf(")", openParen);
 
-            // if (openParen < 0 || closeParen < 0) {
-            // break;
-            // }
+            if (openParen < 0 || closeParen < 0) {
+                break;
+            }
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
         }
